@@ -24,18 +24,18 @@ public class BoardDao {
 			ds = dataSource;
 			
 		} catch (Exception e) {
-			System.out.println("¿¬°á ½ÇÆĞ : " +  e);
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : " +  e);
 			
 		}
 	}
 	
-	public List<BoardDto> list(){  //ÀüÃ¼ ÀÚ·á ÀĞ±â
+	public List<BoardDto> list(){  //ï¿½ï¿½Ã¼ ï¿½Ú·ï¿½ ï¿½Ğ±ï¿½
 		ArrayList<BoardDto> list = new ArrayList<BoardDto>();
 		
 		try {
-			conn = ds.getConnection();  // DB¿Í ¿¬°á
+			conn = ds.getConnection();  // DBì—°ë™
 			
-			String sql = "select * from springboard order by num desc";  //sql¹® ÀÛ¼º
+			String sql = "select * from springboard order by num desc";  //sqlë¬¸
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
@@ -47,7 +47,7 @@ public class BoardDao {
 				boardDto.setContent(rs.getString("content"));
 				boardDto.setBwrite(rs.getString("bwrite"));
 				boardDto.setReadcnt(rs.getInt("readcnt"));
-				
+				list.add(boardDto);
 			}
 			
 		} catch (Exception e) {

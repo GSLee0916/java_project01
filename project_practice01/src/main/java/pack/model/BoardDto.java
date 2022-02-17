@@ -1,5 +1,6 @@
 package pack.model;
 
+
 public class BoardDto {
 	private int num, readcnt;
 	private String author, title, content, bwrite;
